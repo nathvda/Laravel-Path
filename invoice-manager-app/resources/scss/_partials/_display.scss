@@ -1,0 +1,25 @@
+.display__table{
+    display:flex;
+    flex-direction:column;
+    padding:1rem;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+    
+
+    .table--basic{
+
+        border:1px solid #efefef;
+        border-radius:1rem;
+tr{
+        th{
+            font-weight:bolder;
+        }
+
+        th, td{
+                padding:1rem;
+
+        }
+    }
+}
+}

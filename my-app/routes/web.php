@@ -28,6 +28,10 @@ Route::post('/restaurant/create', [RestaurantController::class, 'store']);
 
 Route::get('/restaurant/show/{restaurant:id}', [RestaurantController::class, 'show']);
 
+Route::get('/restaurant/edit/{restaurant:id}', [RestaurantController::class, 'edit']);
+
+Route::patch('/restaurant/edit/{restaurant:id}', [RestaurantController::class, 'update']);
+
 Route::get('/chapters', [ChapterController::class, 'index']);
 
 Route::get('/chapters/create', [ChapterController::class, 'create']);

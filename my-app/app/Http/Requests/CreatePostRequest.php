@@ -36,7 +36,22 @@ class CreatePostRequest extends FormRequest
         return [
             'name.required' => 'The name is required',
             'name.min' => 'Min 5 letters please',
-            'name.max' => 'Max 25 letters please'
+            'name.max' => 'Max 25 letters please',
+            'description.required' => 'The description is required',
+            'description.min' => 'Min 100 letters please',
+            'description.max' => 'Max 300 letters please',
+            'zipCode.required' => 'The zipCode is required',
+            'zipCode.min' => 'Min 5 characters please',
+            'zipCode.max' => 'Max 25 characters please',
+            'town.required' => 'The town is required',
+            'town.min' => 'Min 4 characters please',
+            'town.max' => 'Max 40 characters please',
+            'review.required' => 'The review is required',
+            'review.min' => 'Min 1 please',
+            'review.max' => 'Max 5 please',
+            'adress.required' => 'The adress is required',
+            'adress.min' => 'Min 10 please',
+            'adress.max' => 'Max 256 please'
         ];
     }
 }

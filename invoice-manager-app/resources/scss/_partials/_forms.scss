@@ -1,0 +1,33 @@
+.form--basic{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+    gap:0.5rem;
+
+    h3{
+        font-weight:bolder;
+        font-size:2rem;
+    }
+
+    input{
+        border:1px solid #efefef;
+        border-radius:0.5rem;
+        padding:0.4rem;
+        width:50%;
+    }
+
+    label{
+        text-align:left;
+        width:50%;
+        color:#303030;
+        font-weight:bolder;
+    }
+
+    button{
+        background-color: $maincolor;
+        color:white;
+        padding:0.5rem 1rem;
+        border-radius:0.8rem;
+    }
+}

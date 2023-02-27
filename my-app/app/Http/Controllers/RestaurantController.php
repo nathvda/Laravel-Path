@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
+use App\Http\Requests\CreatePostRequest;
 
 class RestaurantController extends Controller
 {
@@ -26,22 +27,22 @@ class RestaurantController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreatePostRequest $request)
     {
 
-        $this->validate(request(), [
-            
-        ]);
+        $validated =$request->validated();
 
         Restaurant::create([
-            'name' => $request['name'],
-            'description' => $request['description'],
-            'zipCode' => $request['zipCode'],
-            'town' => $request['town'],
-            'review' => $request['review'],
-            'adress' => $request['adress']
+            'name' => $validated['name'],
+            'description' => $validated['description'],
+            'zipCode' => $validated['zipCode'],
+            'town' => $validated['town'],
+            'review' => $validated['review'],
+            'adress' => $validated['adress']
         ]);
-    }
+
+    } 
+
 
     /**
      * Display the specified resource.
@@ -56,17 +57,26 @@ class RestaurantController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Restaurant $restaurant)
     {
-        //
+        return view('restaurants/edit', ['restaurant' => $restaurant]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CreatePostRequest $request, string $id)
     {
-        //
+        $validate = $request->validated();
+
+        Restaurant::find($id)->update([
+            'name' => $validate['name'],
+            'description' => $validate['description'],
+            'zipCode' => $validate['zipCode'],
+            'town' => $validate['town'],
+            'review' => $validate['review'],
+            'adress' => $validate['adress']
+        ]);
     }
 
     /**
