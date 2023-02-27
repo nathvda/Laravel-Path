@@ -24,6 +24,9 @@ Route::get('/restaurant', [RestaurantController::class, 'index']);
 
 Route::get('/restaurant/create', [RestaurantController::class, 'create']);
 
+Route::get('/restaurant/create', [RestaurantController::class, 'create']);
+
+
 Route::post('/restaurant/create', [RestaurantController::class, 'store']);
 
 Route::get('/restaurant/show/{restaurant:id}', [RestaurantController::class, 'show']);

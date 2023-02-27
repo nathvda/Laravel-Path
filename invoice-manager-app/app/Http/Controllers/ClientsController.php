@@ -44,25 +44,34 @@ class ClientsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Client $client)
     {
-        //
+        return view('/clients/show', ['client' => $client]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Client $client)
     {
-        //
+        return view('/clients/edit', ['client' => $client]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CreateClientRequest $request, string $id)
     {
-        //
+        $validated = $request->validated();
+
+        Client::find($id)->update([
+            'society' => $validated['society'],
+            'phone' => $validated['phone'],
+            'email' => $validated['email'],
+            'tva' => $validated['tva'], 
+        ]);
+
+        return redirect('./clients');
     }
 
     /**

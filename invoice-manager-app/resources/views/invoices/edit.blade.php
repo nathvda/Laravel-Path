@@ -5,6 +5,7 @@
 
 <form class="form--basic" method="POST" action="/invoices/edit/{{$invoice->id}}">
     @csrf
+    @method('patch')
 <h3>Modifier une facture</h3>
 <label for="reference">Référence</label>
     <input type="text" id="reference" name="ref" value="{{$invoice->ref}}"/>

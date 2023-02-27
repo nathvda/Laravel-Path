@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Invoice;
+use App\Models\Client;
 
 class InvoicesController extends Controller
 {
@@ -21,7 +22,7 @@ class InvoicesController extends Controller
      */
     public function create()
     {
-        return view('invoices/create');
+        return view('invoices/create', ['clients' => Client::get()]);
     }
 
     /**
@@ -46,9 +47,9 @@ class InvoicesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Invoice $invoice)
     {
-        //
+        return view('/invoices/show', ['invoice' => $invoice]);
     }
 
     /**

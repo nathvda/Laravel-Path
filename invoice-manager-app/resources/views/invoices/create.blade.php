@@ -26,12 +26,18 @@
     @if ($errors->has('tva'))
         <span class="error">{{$errors->first('tva')}}</span>
     @endif
-    <label for="client">client</label>
-    <input type="text" id="client" name="client"/>
+    <select name="client" id="client">
+        <option name="select" value="" selected>Sélectionner un client</option>
+        @foreach($clients as $client)
+        <option name="{{$client->id}}">{{$client->society}}</option>
+        @endforeach
+    </select>
     @if ($errors->has('client'))
         <span class="error">{{$errors->first('client')}}</span>
     @endif
 
     <button type="submit" value="submit">Créer la facture</button>
 </form>
+<a href="/invoices">Retour</a>
+
 @endsection
