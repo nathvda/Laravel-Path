@@ -5,8 +5,8 @@
 <section class="menu__wrapper"><div class="menu__block">
     <h3>Clients</h3>
     <img src=""/>
-    <a href="">Afficher tous les clients</a>
-    <a href="">Créer un client</a>
+    <a href="/clients">Afficher tous les clients</a>
+    <a href="/clients/create">Créer un client</a>
 </div>
 <div class="menu__block">
     <h3>Factures</h3>

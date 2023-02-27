@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InvoicesController;
+use App\Http\Controllers\ClientsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,16 @@ Route::get('/invoices/edit/{invoice:id}', [InvoicesController::class, 'edit']);
 Route::post('/invoices/edit/{invoice:id}', [InvoicesController::class, 'update']);
 
 Route::delete('/invoices/delete/{invoice:id}', [InvoicesController::class, 'destroy']);
+
+Route::get('/clients', [ClientsController::class, 'index']);
+
+Route::get('/clients/create', [ClientsController::class, 'create']);
+
+Route::post('/clients/create', [ClientsController::class, 'store']);
+
+Route::get('/clients/edit/{invoice:id}', [ClientsController::class, 'edit']);
+
+Route::post('/clients/edit/{invoice:id}', [ClientsController::class, 'update']);
+
+Route::delete('/clients/delete/{invoice:id}', [ClientsController::class, 'destroy']);
 
